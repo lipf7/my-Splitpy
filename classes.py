@@ -1649,4 +1649,3 @@ class DiagPlot(object):
         """
 
         self.axes[0].savefig(file)
-
