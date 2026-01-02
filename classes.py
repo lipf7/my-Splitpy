@@ -1435,7 +1435,7 @@ class DiagPlot(object):
 
         # Trim corrected traces to plotting window
         for tr in (rc_trQ_c, rc_trT_c, rc_trFast, rc_trSlow,
-                   sc_trQ_c, sc_trT_c, sc_trFast, sc_trSlow):
+                    sc_trQ_c, sc_trT_c, sc_trFast, sc_trSlow):
             try:
                 tr.trim(t1, t2)
             except Exception:
@@ -1444,18 +1444,18 @@ class DiagPlot(object):
         # 如果传入滤波参数，则对所有用于绘图的 traces 进行带通滤波
         if f1 is not None and f2 is not None:
             for tr in (trL_tmp, trQ_tmp, trT_tmp, trE_tmp, trN_tmp,
-                       rc_trQ_c, rc_trT_c, rc_trFast, rc_trSlow,
-                       sc_trQ_c, sc_trT_c, sc_trFast, sc_trSlow):
+                        rc_trQ_c, rc_trT_c, rc_trFast, rc_trSlow,
+                        sc_trQ_c, sc_trT_c, sc_trFast, sc_trSlow):
                 try:
                     tr.detrend(type='linear').taper(max_percentage=0.05).filter('bandpass', freqmin=f1, freqmax=f2,
-                              corners=2, zerophase=True)
+                                corners=2, zerophase=True)
                 except Exception:
                     pass
 
         ZEN_RC = np.dot(
             np.transpose(M),
             [trL_tmp.data, rc_trQ_c.data,
-             rc_trT_c.data])
+            rc_trT_c.data])
         E_RC = ZEN_RC[1, :]
         N_RC = ZEN_RC[2, :]
         ZEN_SC = np.dot(
