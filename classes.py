@@ -1496,7 +1496,7 @@ class DiagPlot(object):
             str(int(self.split.RC_res.phi)) + r'$\pm$' +
             str("{:.2f}").format(self.split.RC_res.ephi) +
             r'   $\delta t$=' +
-            str(self.split.RC_res.dtt) + r'$\pm$' +
+            str("{:.2f}").format(self.split.RC_res.dtt) + r'$\pm$' +
             str("{:.2f}").format(self.split.RC_res.edtt) +
             's', horizontalalignment='center')
         self.axes[2].text(
@@ -1504,7 +1504,7 @@ class DiagPlot(object):
             str(int(self.split.SC_res.phi)) + r'$\pm$' +
             str("{:.2f}").format(self.split.SC_res.ephi) +
             r'   $\delta t$=' +
-            str(self.split.SC_res.dtt) + r'$\pm$' +
+            str("{:.2f}").format(self.split.SC_res.dtt) + r'$\pm$' +
             str("{:.2f}").format(self.split.SC_res.edtt) +
             's', horizontalalignment='center')
         self.axes[2].text(
