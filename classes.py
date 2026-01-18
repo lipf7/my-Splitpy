@@ -167,6 +167,7 @@ class Meta(object):
             self.phase = phase
             self.accept = True
         else:
+            print("###Rejected Event: GAC out of range, gac=", self.gac)
             self.ttime = np.nan
             self.slow = np.nan
             self.inc = np.nan
